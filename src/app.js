@@ -1,6 +1,7 @@
 import './styles/app.scss';
-import * as ru from './assets/ru.json'
-import * as en from './assets/en.json'
+import * as ru from './assets/ru.json';
+import * as en from './assets/en.json';
+// import PhotoSwipeLightbox from 'photoswipe/lightbox';
 
 $(document).ready(function () {
     loadLanguage('ru');
@@ -25,6 +26,13 @@ $(document).ready(function () {
 
         loadLanguage(lang);
     });
+
+    // const lightbox = new PhotoSwipeLightbox({
+    //     gallery: '.projects-container',
+    //     children: '.prject-item',
+    //     pswpModule: () => import('photoswipe/dist/photoswipe.esm.js')
+    // });
+    // lightbox.init();
 });
 
 function loadLanguage(lan) {
