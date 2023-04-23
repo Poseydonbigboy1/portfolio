@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:ital,wght@0,500;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./dist/style.css">
+</head>
+
+<body>
+    <!-- <div class="mock"></div> -->
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul>
+                    <li class="nav-item scaled active" data-route="main"><span class="hovered">Главная</span></li>
+                    <li class="nav-item scaled" data-route="about"><span class="hovered">О себе</span></li>
+                    <li class="nav-item scaled" data-route="contacts"><span class="hovered">Контакты</span></li>
+                </ul>
+            </nav>
+            <div class="language">
+                <div class="lan-item active" data-select-lang="ru"><span class="hovered">Рус</span></div>
+                <div class="lan-item" data-select-lang="en"><span class="hovered">Eng</span></div>
+            </div>
+        </div>
+        <div class="main">
+            <section class="route showed" id="main">
+                <div class="text">
+                    <div class="sp1" data-lang="main.str1">— ПРИВЕТ</div>
+                    <div class="sp2"><span data-lang="main.str21">Я </span><span class="color"
+                            data-lang="main.str22">Шебаниц</span> <span data-lang="main.str23">Роман</span></div>
+                    <div class="sp3" data-lang="main.str3">Шебаниц Роман — веб-дизайнер, 3D моушн-дизайнер и
+                        3D-аниматор.
+                    </div>
+                </div>
+                <div class="mock-photo"></div>
+                <div class="bg-photo"></div>
+            </section>
+            <section class="route" id="about">
+                <h1>about <span data-lang="main.test"></span></h1>
+            </section>
+            <section class="route" id="contacts">
+                <h1>contacts</h1>
+            </section>
+        </div>
+        <div class="footer">
+            <div class="contact-container">
+                <div class="contact-item hovered">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="alt">
+                        <span>roma.shebanic2@gmail.com</span>
+                        <div class="hovered">
+                            <i class="fa-regular fa-copy"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-item hovered">
+                    <i class="fa-brands fa-telegram"></i>
+                    <div class="alt">
+                        <span>@Goomiber</span>
+                        <div class="hovered">
+                            <i class="fa-regular fa-copy"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-item hovered">
+                    <i class="fa-sharp fa-solid fa-phone-volume"></i>
+                    <div class="alt" style="width: 203px;">
+                        <span>+7 (949) 721 16 94</span>
+                        <div class="hovered">
+                            <i class="fa-regular fa-copy"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./dist/bundle.js"></script>
+<!-- <script type="application/javascript">
+    $(document).ready(function () {
+        loadLanguage('ru');
+
+        $('li.nav-item').on('click', (e) => {
+            const el = $(e.currentTarget);
+            const route = el.data('route').toString();
+
+            $('li.nav-item').removeClass('active');
+            el.addClass('active')
+
+            $('section.route').removeClass('showed');
+            $(`section.route#${route}`).addClass('showed');
+        })
+
+        $('.lan-item').on('click', (e) => {
+            const el = $(e.currentTarget);
+            const lang = el.data('select-lang').toString();
+
+            $('.lan-item').removeClass('active');
+            el.addClass('active')
+
+            loadLanguage(lang);
+        });
+    });
+
+    function loadLanguage(lan) {
+        $.ajax({
+            url: `./${lan}.json`,
+            method: 'GET',
+            success: (langObject) => {
+                let sourceStringArray = buildExpression('', langObject);
+                sourceStringArray.forEach(f => {
+                    $(`[data-lang="${f.source}"]`).text(f.dest)
+                })
+            },
+            error: (err) => { 
+                alert(JSON.stringify(err, null, 4))
+            },
+        })
+    }
+
+    function buildExpression(key, obj) {
+        return Object.entries(obj)
+            .reduce((acc, curr) => {
+                if (isLiteralObject(curr[1])) {
+                    let arr = []
+                    if (key !== null && key !== '') {
+                        arr = buildExpression(`${key}.${curr[0]}`, curr[1]);
+                    } else {
+                        arr = buildExpression(`${curr[0]}`, curr[1]);
+                    }
+                    acc.push(...arr);
+                } else {
+                    acc.push({
+                        source: key !== null && key !== '' ? `${key}.${curr[0]}` : `${curr[0]}`,
+                        dest: curr[1]
+                    });
+                }
+                return acc;
+            }, []);
+    }
+
+    function isLiteralObject(variable) {
+        return (!!variable) && (variable.constructor === Object);
+    };
+</script> -->
+
+</html>
