@@ -1,9 +1,14 @@
 import './styles/app.scss';
 import * as ru from './assets/ru.json';
 import * as en from './assets/en.json';
+// import lightGallery from 'lightgallery';
+// import lgThumbnail from 'lightgallery/plugins/thumbnail'
+// import lgZoom from 'lightgallery/plugins/zoom'
 // import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import baguetteBox from 'baguettebox.js';
 
 $(document).ready(function () {
+    baguetteBox.run('.gallery');
     loadLanguage('ru');
 
     $('li.nav-item').on('click', (e) => {
@@ -33,6 +38,13 @@ $(document).ready(function () {
     //     pswpModule: () => import('photoswipe/dist/photoswipe.esm.js')
     // });
     // lightbox.init();
+    // lightGallery(document.getElementById('#lightgallery'), {
+    //     plugins: [lgZoom, lgThumbnail],
+    //     licenseKey: 'your_license_key',
+    //     speed: 500,
+    //     thumbnail: true,
+    //     // ... other settings
+    // });
 });
 
 function loadLanguage(lan) {

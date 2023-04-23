@@ -1,3 +1,5 @@
+@import 'baguettebox.js/dist/baguetteBox.min.css';
+
 :root {
     --bg-text-hover-color: #ff5757;
     --text-color: #2e2e2e;
@@ -130,6 +132,19 @@ body {
             p {
                 font-size: 21px;
 
+            }
+        }
+    }
+
+    #projects {
+        .gallery {
+            a {
+                color: white;
+                img {
+                    width: calc((100% - (5px * 2)) / 3);
+                    padding: 5px;
+                }
+                
             }
         }
     }

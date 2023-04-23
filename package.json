@@ -21,6 +21,8 @@
     "webpack-cli": "^5.0.2"
   },
   "dependencies": {
+    "baguettebox.js": "^1.11.1",
+    "lightgallery": "^2.7.1",
     "photoswipe": "^5.3.7"
   }
 }
